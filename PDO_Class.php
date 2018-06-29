@@ -63,10 +63,10 @@ class MyPDO{
 		return $this->pdo->lastInsertId(); 
 		
 	}
-	function raw_prep_select($sql, $val){
+	function raw_prep_select($sql, $val = null){
 		$fprep = $this->pdo->prepare($sql);		
 		try{
-		count($val) > 0 ? $fprep->execute($val): $fprep->execute();
+		isset($val) > 0 ? $fprep->execute($val): $fprep->execute();
 		return $fprep->fetchALL(PDO::FETCH_ASSOC);
 		}
 		catch(Exception $e){
