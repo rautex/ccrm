@@ -69,7 +69,7 @@ class MyPDO
         }
         return $this->pdo->lastInsertId();        
     }
-    function raw_prep_select($sql, $Array = null)
+    function Raw_prep_select($sql, $Array = null)
     {
     	  /* Funktion um ein fertiges Statment auszuführen  */
         $Prepared_Select = $this->pdo->prepare($sql);
@@ -93,7 +93,7 @@ class MyPDO
         }
     }
     
-    function raw_exec($sql)
+    function Raw_exec($sql)
     {
     	  /* Funktion um ein  SQL Statment direkt auszuführen ohne Rückgabe */
         try {
@@ -157,7 +157,7 @@ class MyPDO
         }        
         return $sf;
     }
-    function select($Tabelle, $Felder, $Bedienung1 = null, $orderby = null)
+    function Select($Tabelle, $Felder, $Bedienung1 = null, $orderby = null)
     {
         if ($Bedienung1) {
             foreach ($Bedienung1 as $key => $val) {
